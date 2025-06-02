@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
+
+body {
+  font-family: "IM Fell English", serif;
+  margin: 0;
+  background-color: #f6f1df;
+  color: #1e1c1a;
+}
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/halftone.jpg');
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IM Fell English", serif;
+}
+
+[lang="ar"] {
+  font-family: "Amiri", serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.site-header {
+  background-color: #f6f1df;
+  border-bottom: 2px solid #1e1c1a;
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #1e1c1a;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  /* border: 2px solid #1e1c1a; */
+  background-color: #f6f1df;
+}
+
+.banner {
+  background-color: #e3d8b5;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid #22201f;
+  margin-bottom: 2rem;
+}
+
+.banner h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  font-family: "IM Fell English", serif;
+}
+
+.banner p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.cell {
+  background-color: #f6f1df;
+  border: 2px solid #e3d8b5;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cell p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.cell img {
+  width: 150px;
+  height: auto;
+  filter: contrast(120%) grayscale(100%);
+  background-color: transparent !important;
+  mix-blend-mode: multiply;
+}
+
+.site-footer {
+  background-color: #f6f1df;
+  border-top: 2px solid #1e1c1a;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #1e1c1a;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
