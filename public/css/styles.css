@@ -38,7 +38,20 @@ h6 {
 .site-header {
   background-color: #f6f1df;
   border-bottom: 2px solid #1e1c1a;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  background-color: rgba(246, 241, 223, 0);
+  border-bottom-color: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(5px);
 }
 
 .header-content {
@@ -66,9 +79,8 @@ nav a:hover {
 
 .container {
   max-width: 1000px;
-  margin: auto;
+  margin: 6rem auto 2rem;
   padding: 2rem;
-  /* border: 2px solid #1e1c1a; */
   background-color: #f6f1df;
 }
 
@@ -109,6 +121,8 @@ h1 {
   border: 2px solid #e3d8b5;
   padding: 1rem;
   text-align: center;
+  cursor: pointer;
+  
 }
 
 .cell p {
@@ -123,15 +137,43 @@ h1 {
   filter: contrast(120%) grayscale(100%);
   background-color: transparent !important;
   mix-blend-mode: multiply;
+  transition: filter 0.3s ease;
+}
+
+.cell img:hover {
+  filter: contrast(120%) grayscale(0%);
 }
 
 .site-footer {
   background-color: #f6f1df;
   border-top: 2px solid #1e1c1a;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #1e1c1a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.site-footer a:hover {
+  text-decoration: none;
+  border-bottom-color: #1e1c1a;
 }
 
 .site-footer a {
@@ -141,4 +183,14 @@ h1 {
 
 .site-footer a:hover {
   text-decoration: underline;
+}
+
+.whatsapp-link {
+  color: #25D366 !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.whatsapp-link svg {
+  margin-right: 6px;
 }
