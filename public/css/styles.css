@@ -129,6 +129,7 @@ h1 {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   line-height: 1.5;
+
 }
 
 .cell img {
@@ -140,50 +141,16 @@ h1 {
   transition: filter 0.3s ease;
 }
 
+
 .cell img:hover {
   filter: contrast(120%) grayscale(0%);
 }
 
-.site-footer {
-  background-color: #f6f1df;
-  border-top: 2px solid #1e1c1a;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
+.cell:hover  p {
+  font-weight: bold !important;
+  transition: font-weight 0.2s ease;
 }
 
-.footer-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-.site-footer a {
-  color: #1e1c1a;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.site-footer a:hover {
-  text-decoration: none;
-  border-bottom-color: #1e1c1a;
-}
-
-.site-footer a {
-  color: #1e1c1a;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
 
 .whatsapp-link {
   color: #25D366 !important;
@@ -193,4 +160,65 @@ h1 {
 
 .whatsapp-link svg {
   margin-right: 6px;
+}
+
+/* Vintage Footer Styles */
+.vintage-footer {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../images/halftone.jpg') repeat;
+  padding: 2rem 1rem;
+  border-top: 3px solid #d4af37;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.vintage-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.1) 2px,
+    rgba(255, 255, 255, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info {
+  color: #f3e9d2;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #d4af37;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.contact-info a:hover {
+  color: #ffd700;
+}
+
+.copyright {
+  color: #e3d8b5;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
 }
