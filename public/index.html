@@ -3,31 +3,40 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
   <title>Brocante</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-<div class="background-overlay"></div>
+  <div class="background-overlay"></div>
   <header class="site-header">
     <div class="header-content">
       <div class="logo">🏺</div>
-      <nav>
+      <nav class="desktop-nav">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Open menu">☰</button>
+      <nav class="mobile-nav">
+        <a href="/">Home</a>
+        <a href="/articls.html"></a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="banner">
-      <h2>Brocante</h2>
-      <p>Explorez des trouvailles vintage ou vendez vos articles d'occasion en toute simplicité.</p>
+      <!-- <h2>Brocante</h2> -->
+      <!-- <p>Explorez des trouvailles vintage ou vendez vos articles d'occasion en toute simplicité.</p> -->
+      
     </section>
 
-    <h1>بيع و شراء الأشياء المستعملة</h1>
+    <h1>بيع و شراء الأشياء المستعملة و التحف</h1>
+    <h1>Achat et vente d'objets d'occasion et d'antiquités. </h1>
     <div class="grid">
       <!-- Arabic -->
       <div class="cell">
@@ -52,29 +61,32 @@
       <!-- French -->
       <div class="cell">
         <p>Vous souhaitez acheter ?<br> Nous vous le vendons.</p>
-        <img src="images/drawer.png" alt="Drawer" />
+        <img src="images/bicycle.png" alt="Drawer" />
       </div>
       <div class="cell">
         <p>Vous souhaitez vendre quelque chose ?<br> Nous vous l'achèterons.</p>
-        <img src="images/vase.png" alt="Vase" />
+        <img src="images/vase-2.png" alt="Vase" />
       </div>
     </div>
   </main>
 
-    <!-- Vintage Footer -->
-    <footer class="vintage-footer">
-      <div class="footer-content">
-        <div class="contact-info">
-          <p>☎️ Téléphone: <a href="https://wa.me/212663828405">0663828405 sur WhatsApp</a></p>
-          <p>📧 E-mail: <a href="mailto:contact@brocante.ma">contact@brocante.ma</a></p>
-          <p>📍 Adresse: Riad-Essalm Bloc Ac N°33 Mohammedia-Maroc</p>
-        </div>
-        <div class="copyright">
-          <p>© 2025 Brocante Maroc - Tous droits réservés</p>
-        </div>
+  <!-- Vintage Footer -->
+  <footer class="vintage-footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <p>☎️ Téléphone: <a href="https://wa.me/212663828405">0663828405</a></p>
+        <p>📧 E-mail: <a href="mailto:contact@brocante.ma">contact@brocante.ma</a></p>
+        <p>📍 Adresse: Riad-Essalm Bloc Ac N°33 Mohammedia-Maroc</p>
       </div>
-    </footer>  
-    <script src="js/scripts.js"></script>
-  </body>
+      <div class="copyright">
+        <p>© 2025 Brocante Maroc - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+</body>
+<a href="https://wa.me/212663828405" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+</a>
 
 </html>

@@ -13,7 +13,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/halftone.jpg');
+  background-image: url("../images/halftone.jpg");
   background-repeat: repeat;
   opacity: 0.05;
   pointer-events: none;
@@ -43,7 +43,7 @@ h6 {
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -85,11 +85,22 @@ nav a:hover {
 }
 
 .banner {
+  background-image: url("../images/bannier.jpg");
   background-color: #e3d8b5;
   padding: 1.5rem;
   text-align: center;
   border: 2px solid #22201f;
   margin-bottom: 2rem;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem; 
+  position: relative; 
+  min-height: 300px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner h2 {
@@ -103,7 +114,6 @@ nav a:hover {
   margin: 0;
 }
 
-
 h1 {
   text-align: center;
   font-size: 2.5rem;
@@ -116,24 +126,139 @@ h1 {
   gap: 2px;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    margin: 6rem 1rem 2rem;
+    padding: 1rem;
+  }
+
+  .grid {
+    gap: 1px;
+  }
+
+  .cell {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: 2px solid #1e1c1a;
+    color: #1e1c1a;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(246, 241, 223, 0.98);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    border-bottom: 2px solid #1e1c1a;
+  }
+
+  .mobile-nav.active {
+    display: block;
+  }
+
+  .mobile-nav a {
+    display: block;
+    color: #1e1c1a;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    padding: 1rem;
+  }
+
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  .banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .cell p {
+    font-size: 1rem;
+  }
+
+  .cell img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
 .cell {
   background-color: #f6f1df;
   border: 2px solid #e3d8b5;
   padding: 1rem;
   text-align: center;
   cursor: pointer;
-  
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: none) {
+  .cell:hover p {
+    font-weight: normal !important;
+  }
+  .cell img:hover {
+    filter: contrast(120%) grayscale(100%);
+  }
 }
 
 .cell p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   line-height: 1.5;
-
 }
 
 .cell img {
-  width: 150px;
+  width: 100%;
+  max-width: 150px;
   height: auto;
   filter: contrast(120%) grayscale(100%);
   background-color: transparent !important;
@@ -141,19 +266,17 @@ h1 {
   transition: filter 0.3s ease;
 }
 
-
 .cell img:hover {
   filter: contrast(120%) grayscale(0%);
 }
 
-.cell:hover  p {
+.cell:hover p {
   font-weight: bold !important;
   transition: font-weight 0.2s ease;
 }
 
-
 .whatsapp-link {
-  color: #25D366 !important;
+  color: #25d366 !important;
   display: inline-flex;
   align-items: center;
 }
@@ -164,9 +287,7 @@ h1 {
 
 /* Vintage Footer Styles */
 .vintage-footer {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('../images/halftone.jpg') repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/halftone.jpg") repeat;
   padding: 2rem 1rem;
   border-top: 3px solid #d4af37;
   position: relative;
@@ -174,19 +295,13 @@ h1 {
 }
 
 .vintage-footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 2px,
-    rgba(255, 255, 255, 0.1) 2px,
-    rgba(255, 255, 255, 0.1) 4px
-  );
+  background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px);
   pointer-events: none;
 }
 
@@ -200,7 +315,7 @@ h1 {
 
 .contact-info {
   color: #f3e9d2;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -221,4 +336,26 @@ h1 {
   font-size: 0.9rem;
   margin-top: 1.5rem;
   letter-spacing: 1px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  /* filter: grayscale(100%) contrast(120%); */
+  mix-blend-mode: multiply;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }
