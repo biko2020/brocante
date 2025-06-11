@@ -89,7 +89,7 @@ nav a {
 }
 
 nav a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -113,40 +113,42 @@ nav a:hover::before {
 }
 
 nav::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 4px;
   right: 4px;
   height: 8px;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 2px,
-    #1e1c1a 2px,
-    #1e1c1a 4px
-  );
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, #1e1c1a 2px, #1e1c1a 4px);
 }
 
-/* VINTAGE HALFTONE MENU */
-nav.desktop-nav {
+/* Main Navigation Structure */
+.main-nav {
   background-color: #f6f1df;
-  border: 3px double #1e1c1a;
-  box-shadow: inset 0 0 0 1px #1e1c1a, 4px 4px 0 #1e1c1a;
-  padding: 0.5rem 1rem;
-  background-image: url("../images/halftone.jpg");
-  background-size: contain;
-  background-repeat: repeat;
-  background-blend-mode: multiply;
-  filter: contrast(110%) saturate(90%);
+  border-bottom: 2px solid #1e1c1a;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 nav.desktop-nav a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-weight: bold;
   color: #1e1c1a;
-  padding: 0.6rem 1.2rem;
-  margin: 0 0.5rem;
+  padding: 0.8rem 1.5rem;
   background-color: #f6f1df;
   border: 2px dashed #1e1c1a;
   box-shadow: 3px 3px 0 #1e1c1a;
@@ -156,10 +158,11 @@ nav.desktop-nav a {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   font-family: "IM Fell English", serif;
+  white-space: nowrap;
 }
 
 nav.desktop-nav a::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -3px;
   background-image: url("../images/halftone.jpg");
@@ -180,7 +183,6 @@ nav.desktop-nav a:hover::before {
   opacity: 0.25;
 }
 
-
 .container {
   max-width: 1000px;
   margin: 6rem auto 2rem;
@@ -198,9 +200,9 @@ nav.desktop-nav a:hover::before {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 2rem; 
-  position: relative; 
-  min-height: 300px; 
+  padding: 2rem;
+  position: relative;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,155 +254,170 @@ h1 {
   }
 }
 
+/* Auth Form Styles */
+.auth-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border: 3px solid #1e1c1a;
+  box-shadow: 8px 8px 0 rgba(30, 28, 26, 0.2);
+  position: relative;
+}
+
+.auth-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1e1c1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #1e1c1a;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #1e1c1a;
+  background: #f6f1df;
+  font-family: "IM Fell English", serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.auth-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #1e1c1a;
+  color: #f6f1df;
+  border: 2px solid #1e1c1a;
+  cursor: pointer;
+  font-family: "IM Fell English", serif;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.auth-button:hover {
+  background: #d4af37;
+  color: #1e1c1a;
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.auth-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.auth-link {
+  color: #1e1c1a;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #d4af37;
+  border-bottom-color: currentColor;
+}
+
+.auth-error {
+  padding: 1rem;
+  background: #ffe3e3;
+  border: 2px solid #ff6b6b;
+  color: #cc0000;
+  margin-bottom: 1.5rem;
+  font-family: "Courier New", monospace;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .auth-title {
+    font-size: 1.8rem;
+  }
+}
+/* Hide desktop nav on small screens */
 @media (max-width: 767px) {
   .desktop-nav {
     display: none;
   }
+
   .mobile-menu-toggle {
     display: block;
-    background: #f6f1df;
-    border: 2px solid #1e1c1a;
-    color: #1e1c1a;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 #1e1c1a;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    margin-right: 1rem;
-}
-
-.mobile-menu-toggle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/halftone.jpg");
-    opacity: 0.1;
-    z-index: 0;
-}
-
-.mobile-menu-toggle:hover {
-    color: #d4af37;
-    box-shadow: 5px 5px 0 #1e1c1a;
-    transform: translate(-2px, -2px);
-}
+  }
 
   .mobile-nav {
     display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: rgba(246, 241, 223, 0.98);
-    padding: 1rem;
-    text-align: center;
-    z-index: 1000;
-    border: 2px solid #1e1c1a;
-    box-shadow: 3px 3px 0 #1e1c1a;
-  }
-
-  .mobile-nav::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 4px;
-    right: 4px;
-    height: 8px;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 2px,
-      #1e1c1a 2px,
-      #1e1c1a 4px
-    );
-  }
-
-  .mobile-nav.active {
-    display: block;
-  }
-
-  .mobile-nav a {
-    display: block;
-    color: #1e1c1a;
-    padding: 1rem;
-    font-size: 1.2rem;
-    text-decoration: none;
-    position: relative;
-    margin: 0.5rem 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-  }
-
-  .mobile-nav a::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background-image: url("../images/halftone.jpg");
-    opacity: 0.15;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    border: 2px dashed rgba(30, 28, 26, 0.3);
-    mix-blend-mode: multiply;
-  }
-
-  .mobile-nav a:hover {
-    color: #d4af37;
-  }
-
-  .mobile-nav a:hover::before {
-    opacity: 0.3;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .site-header {
-    padding: 1rem;
-  }
-
-  .header-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     gap: 0.5rem;
   }
 
-  h1 {
-    font-size: 2rem;
-    margin: 1rem 0;
+  /* When active: visible and styled */
+  .mobile-nav.active {
+    display: flex;
+    background: #f6f1df;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-top: 2px solid #1e1c1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .banner h2 {
-    font-size: 1.5rem;
+  .mobile-nav a {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed rgba(30, 28, 26, 0.2);
+  }
+}
+
+/* Show desktop nav only on wider screens */
+@media (min-width: 768px) {
+  .mobile-menu-toggle,
+  .mobile-nav {
+    display: none !important;
   }
 
-  .banner p {
-    font-size: 1rem;
-  }
-
-  .cell p {
-    font-size: 1rem;
-  }
-
-  .cell img {
-    width: 100%;
-    max-width: 250px;
+  .desktop-nav {
+    display: flex;
   }
 }
 
@@ -475,6 +492,41 @@ h1 {
   bottom: 0;
   background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px);
   pointer-events: none;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
 }
 
 .footer-content {
